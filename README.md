@@ -42,9 +42,9 @@
 ```
 
 ## TODO
-..* More Unit Tests
-..* Strategy Base Data Layer
-..* Redis for Caching
-..* Docker integration on Heroku
-..* Non Relational Persistence Strategy
-..* Circuit Breaker Data Access Commands
+* More Unit Tests
+* Strategy Base Data Layer
+* Redis for Caching
+* Docker integration on Heroku
+* Non Relational Persistence Strategy
+* Circuit Breaker Data Access Commands
