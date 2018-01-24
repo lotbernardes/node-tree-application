@@ -65,13 +65,16 @@ public class NodeChildrenLinearViewTransferObject {
     List<NodeChildrenLinearViewTransferObject> result = new ArrayList<>();
     result.add(NodeChildrenLinearViewTransferObject.singleton(current));
 
-    current.children.forEach(child -> result.addAll(wrapCurrentAndAllChildren(child)));
+    if (Objects.nonNull(current.children)) {
+      current.children.forEach(child -> result.addAll(wrapCurrentAndAllChildren(child)));
+    }
+
     return result;
   }
 
   private static NodeChildrenLinearViewTransferObject singleton(Node node) {
     Long parent = (Objects.nonNull(node.parent)) ? node.parent.identifier : null;
-    Boolean hasChildren = !node.children.isEmpty();
+    Boolean hasChildren = (Objects.nonNull(node.children) && !node.children.isEmpty());
 
     return new NodeChildrenLinearViewTransferObject(node.identifier, parent, node.code, node.description, node.detail, hasChildren);
   }

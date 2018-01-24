@@ -1,5 +1,36 @@
 # NODE TREE APPLICATION
 
+## DESIGN
+### Two "separate" modules
+* Core "api" module.
+* Database access module.
+
+```
+           .----------------------.
+           | DEPENDENCY INJECTION |
+           '----------------------'
+                       ^
+                       |
+    .------------.     |      .-------------.
+    | API MODULE | ----^--->  | DATA MODULE |
+    '------------'            '-------------'
+```
+
+## TECHNOLOGIES
+### USED
+* Java 8
+* Hibernate
+* Spring
+
+### WANTED TO USE
+* Docker for Infrastructure.
+* Redis for Strategy Based Data Layer.
+* Hystrix for Circuit Breaker data access wrapping.
+* Native SQL (Recursive query in MySQL proved to be too hard).
+
+## TODO
+* More Unit Tests.
+
 ## API
 
 ### BASE PATH
@@ -40,11 +71,3 @@
   "detail": "The First One Details",
 }
 ```
-
-## TODO
-* More Unit Tests
-* Strategy Base Data Layer
-* Redis for Caching
-* Docker integration on Heroku
-* Non Relational Persistence Strategy
-* Circuit Breaker Data Access Commands
